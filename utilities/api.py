@@ -9,6 +9,8 @@ key = "?key=qaclick123"  # Параметр для всех запросов
 
 class Google_maps_api:
 
+    """Метод для создания новой локации"""
+
     @staticmethod
     def create_new_place():
         json_for_create_new_location = {
@@ -29,4 +31,8 @@ class Google_maps_api:
         [print(k) for k in result_post.text.split(',')]
         return result_post
 
-    
+    """Метод для проверки новой локации"""
+
+    @staticmethod
+    def get_new_place():
+        pass
