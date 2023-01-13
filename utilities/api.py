@@ -34,5 +34,12 @@ class Google_maps_api:
     """Метод для проверки новой локации"""
 
     @staticmethod
-    def get_new_place():
-        pass
+    def get_new_place(place_id):
+
+        get_resource = "/maps/api/place/get/json"
+        get_url = base_url + get_resource + key + "&place_id=" + place_id
+        print(get_url)
+        result_get = Http_methods.get(get_url)
+        print(result_get.text)
+        return result_get
+
