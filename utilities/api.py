@@ -36,10 +36,24 @@ class Google_maps_api:
     @staticmethod
     def get_new_place(place_id):
 
-        get_resource = "/maps/api/place/get/json"
+        get_resource = "/maps/api/place/get/json"  # Ресурс метода GET
         get_url = base_url + get_resource + key + "&place_id=" + place_id
         print(get_url)
         result_get = Http_methods.get(get_url)
         print(result_get.text)
         return result_get
 
+    @staticmethod
+    def put_new_place(place_id):
+
+        put_resource = "/maps/api/place/update/json"  # Ресурс метода PUT
+        put_url = base_url + put_resource + key
+        print(put_url)
+        json_for_update_new_location = {
+                                        "place_id": place_id,
+                                        "address": "100 Lenina street, RU",
+                                        "key": "qaclick123"
+                                        }
+        result_put = Http_methods.put(put_url, json_for_update_new_location)
+        print(result_put.text)
+        return result_put

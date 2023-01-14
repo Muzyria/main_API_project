@@ -15,3 +15,6 @@ class Test_create_place:
 
         print("Метод POST")
         result_post = Google_maps_api.get_new_place(place_id)
+
+        print("Метод PUT")
+        result_put = Google_maps_api.put_new_place(place_id)
