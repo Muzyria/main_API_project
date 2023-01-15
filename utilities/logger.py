@@ -2,8 +2,9 @@ import datetime
 import os
 from requests import Response
 
+
 class Logger():
-    file_name = fr"C:\Git_Muzyria\main_project\logs\log_" + str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")) + ".log"
+    file_name = fr"C:\Git_Muzyria\main_API_project\logs\log_" + str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")) + ".log"
 
     @classmethod
     def write_log_to_file(cls, data: str):
